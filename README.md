@@ -75,10 +75,14 @@ The app is configured with a single user 'john' and password 'pw' which you
 can use to see the functionality provided by the app. You can add more users easily
 through the database.
 
+## Contributions
+
+Pull requests are welcome.
+
 ## License
 To be added
 
 ## To Do
-[ ] Add requirements.txt
-[ ] Add License
-[ ] Clean up Bootstrap Styling
+- [ ] Add requirements.txt
+- [ ] Add License
+- [ ] Clean up Bootstrap Styling
