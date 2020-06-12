@@ -24,6 +24,8 @@ By creating a method within routes that returns the current-user, one can import
 reference this user in Dash, allowing for database queries based on the individual user 
 (while simultaneously preventing the user from getting access to other user's data).
 
+![demo gif](https://github.com/seanmajorpayne/dash_multi_user_authentication/blob/master/auth_demo.gif)
+
 ## Getting Started
 
 Simply perform a git pull to grab the files from this repo.
@@ -87,6 +89,10 @@ Pull requests are welcome.
 
 ## License
 See the license details [here](https://github.com/seanmajorpayne/dash_multi_user_authentication/blob/master/LICENSE.md)
+
+## Acknowledgements
+
+Thank you to Miguel Ginsberg for the [Flask Mega Tutorial.](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
 ## To Do
 - [x] Add requirements.txt
