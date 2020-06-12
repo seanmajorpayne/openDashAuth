@@ -55,9 +55,3 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('index'))
-	
-	
-@app.route("/dashapp")
-@login_required
-def dashapp():
-    return render_template(url_for('dashapp'))
