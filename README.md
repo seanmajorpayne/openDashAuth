@@ -90,5 +90,5 @@ See the license details [here](https://github.com/seanmajorpayne/dash_multi_user
 
 ## To Do
 - [x] Add requirements.txt
-- [ ] Add License
+- [x] Add License
 - [ ] Clean up Bootstrap Styling
