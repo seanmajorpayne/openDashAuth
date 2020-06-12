@@ -92,6 +92,6 @@ Pull requests are welcome.
 To be added
 
 ## To Do
-- [ ] Add requirements.txt
+- [x] Add requirements.txt
 - [ ] Add License
 - [ ] Clean up Bootstrap Styling
