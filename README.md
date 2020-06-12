@@ -52,28 +52,25 @@ Then run it with:
 source venv/bin/activate
 ```
 
-For now, you will need to install the dependencies manually. I will add a requirements
-file soon for easy install.
+Next, install the dependencies.
 
 Note that some dependencies will only install with an older version of pip. If you are
 getting an error about 'PEP 517', run the following command:
 
 ```
-pip install pip==18.1
+pip install pip==18.1 && pip install requirements.txt && pip install pip --upgrade
 ```
 
-Then install the dependencies and when you are done, re-upgrade pip using:
-
-```
-pip install pip --upgrade
-```
+This will downgrade your current pip version and upgrade it back once the dependencies
+are installed.
 
 Once all of this is done, you can run the application locally using 'flask run' or
 modify it and deploy it on a public facing server.
 
 The app is configured with a single user 'john' and password 'pw' which you
 can use to see the functionality provided by the app. You can add more users easily
-through the database.
+through the database. Note that the config file currently has a secret key that
+always amounts to true. This needs to be changed for a production application.
 
 ## Security
 
@@ -89,7 +86,7 @@ For a full overview of Flask Security, check [here](https://flask.palletsproject
 Pull requests are welcome.
 
 ## License
-To be added
+See the license details [here](https://github.com/seanmajorpayne/dash_multi_user_authentication/blob/master/LICENSE.md)
 
 ## To Do
 - [x] Add requirements.txt
