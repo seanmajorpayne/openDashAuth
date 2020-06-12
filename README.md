@@ -75,6 +75,15 @@ The app is configured with a single user 'john' and password 'pw' which you
 can use to see the functionality provided by the app. You can add more users easily
 through the database.
 
+## Security
+
+While this template is offered 'as is' and I don't make any guarantees about security,
+there are a few helpful security features included. Flask-WTF forms have CSRF protection
+by default. Flask configures Jinja2 to automatically escape values unless explicitly told
+not to, which helps with cross site scripting issues.
+
+For a full overview of Flask Security, check [here](https://flask.palletsprojects.com/en/1.1.x/security/)
+
 ## Contributions
 
 Pull requests are welcome.
