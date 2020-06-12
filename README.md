@@ -58,7 +58,7 @@ Note that some dependencies will only install with an older version of pip. If y
 getting an error about 'PEP 517', run the following command:
 
 ```
-pip install pip==18.1 && pip install requirements.txt && pip install pip --upgrade
+pip install pip==18.1 && pip install -r requirements.txt && pip install pip --upgrade
 ```
 
 This will downgrade your current pip version and upgrade it back once the dependencies
