@@ -43,7 +43,7 @@ def login():
         """To prevent malicious users from adding a malicious site into the parameters,
         this checks to see if the url is relative.
         """
-        if not next_page or url_parse(next_page).netloc != '':
+        if not next_page or url_parse(next_page).netloc != '' or next_page == '/logout':
             next_page = url_for('index')
         return redirect(next_page)
 	
