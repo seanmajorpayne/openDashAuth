@@ -56,6 +56,10 @@ source venv/bin/activate
 
 Next, install the dependencies.
 
+```
+pip install -r requirements.txt
+```
+
 Note that some dependencies will only install with an older version of pip. If you are
 getting an error about 'PEP 517', run the following command:
 
@@ -66,8 +70,13 @@ pip install pip==18.1 && pip install -r requirements.txt && pip install pip --up
 This will downgrade your current pip version and upgrade it back once the dependencies
 are installed.
 
-Once all of this is done, you can run the application locally using 'flask run' or
-modify it and deploy it on a public facing server.
+Once all of this is done, you can run the application locally using 
+
+```
+MAIL_SERVER=example.com FLASK_APP=$PWD/digitalDash.py flask run
+```
+
+or modify it and deploy it on a public facing server.
 
 The app is configured with a single user 'john' and password 'pw' which you
 can use to see the functionality provided by the app. You can add more users easily
