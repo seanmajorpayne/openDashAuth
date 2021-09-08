@@ -24,7 +24,7 @@ By creating a method within routes that returns the current-user, one can import
 reference this user in Dash, allowing for database queries based on the individual user 
 (while simultaneously preventing the user from getting access to other user's data).
 
-![demo gif](https://github.com/seanmajorpayne/openDashAuth/blob/master/auth_demo.gif)
+![demo gif](https://github.com/seanmajorpayne/openDashAuth/blob/main/auth_demo.gif)
 
 ## Getting Started
 
