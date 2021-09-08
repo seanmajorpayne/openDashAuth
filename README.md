@@ -41,42 +41,18 @@ $ cd /path/to/dash_multi_user_authentication
 # The command on windows is 'dir' not 'cd'
 ```
 
-You will probably want to run this application in a virtual environment. Create one with
-the following command:
+Then run the application with docker
 
 ```
-python3 -m venv venv
+$ docker-compose build
+$ docker-compose up
 ```
 
-Then run it with:
+You can stop the application with
 
 ```
-source venv/bin/activate
+$ docker-compose down
 ```
-
-Next, install the dependencies.
-
-```
-pip install -r requirements.txt
-```
-
-Note that some dependencies will only install with an older version of pip. If you are
-getting an error about 'PEP 517', run the following command:
-
-```
-pip install pip==18.1 && pip install -r requirements.txt && pip install pip --upgrade
-```
-
-This will downgrade your current pip version and upgrade it back once the dependencies
-are installed.
-
-Once all of this is done, you can run the application locally using 
-
-```
-MAIL_SERVER=example.com FLASK_APP=$PWD/digitalDash.py flask run
-```
-
-or modify it and deploy it on a public facing server.
 
 The app is configured with a single user 'john' and password 'pw' which you
 can use to see the functionality provided by the app. You can add more users easily
