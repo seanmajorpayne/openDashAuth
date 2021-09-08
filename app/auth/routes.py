@@ -27,7 +27,7 @@ def login():
     """
 
     if current_user.is_authenticated:
-        return redirect(url_for("index"))
+        return redirect(url_for("auth.index"))
 
     form = LoginForm()
 
@@ -37,7 +37,7 @@ def login():
         ).first()  # None if invalid
         if user is None or not user.check_password(form.password.data):
             flash("Invalid username or password")
-            return redirect(url_for("login"))
+            return redirect(url_for("auth.login"))
 
         login_user(user, remember=form.remember_me.data)
 
@@ -47,7 +47,7 @@ def login():
         this checks to see if the url is relative.
         """
         if not next_page or url_parse(next_page).netloc != "" or next_page == "/logout":
-            next_page = url_for("index")
+            next_page = url_for("auth.index")
         return redirect(next_page)
 
     return render_template("login.html", form=form)
@@ -57,4 +57,4 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("index"))
+    return redirect(url_for("auth.index"))
