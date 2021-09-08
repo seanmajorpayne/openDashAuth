@@ -1,4 +1,6 @@
-# Dash Multi-User Authentication
+# openDashAuth
+
+## Dash Multi-User Authentication
 
 Dash does not natively support multi-user authentication (at least not for free). While
 looking for a solution to support my own app, I noticed many developers online needed
