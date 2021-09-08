@@ -10,7 +10,7 @@ from flask_bootstrap import Bootstrap
 
 db = SQLAlchemy()
 login = LoginManager()
-login.login_view = 'auth.login'
+login.login_view = "auth.login"
 migrate = Migrate()
 bootstrap = Bootstrap()
 
@@ -26,35 +26,43 @@ def create_app():
 
     # Initialize Blueprints
     from app.auth import bp as auth_bp
+
     app.register_blueprint(auth_bp)
 
     # Errors for the production application are handled via email
     if not app.debug:
         auth = None
-        if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
-            auth = (app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD'])
+        if app.config["MAIL_USERNAME"] or app.config["MAIL_PASSWORD"]:
+            auth = (app.config["MAIL_USERNAME"], app.config["MAIL_PASSWORD"])
         secure = None
-        if app.config['MAIL_USE_TLS']:
+        if app.config["MAIL_USE_TLS"]:
             secure = ()
         mail_handler = SMTPHandler(
-            mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
-            fromaddr='no-reply@' + app.config['MAIL_SERVER'],
-            toaddrs=app.config['ADMINS'], subject='Dash App Failure',
-            credentials=auth, secure=secure)
+            mailhost=(app.config["MAIL_SERVER"], app.config["MAIL_PORT"]),
+            fromaddr="no-reply@" + app.config["MAIL_SERVER"],
+            toaddrs=app.config["ADMINS"],
+            subject="Dash App Failure",
+            credentials=auth,
+            secure=secure,
+        )
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
-        if not os.path.exists('logs'):
-            os.mkdir('logs')
-        file_handler = RotatingFileHandler('logs/digitaldash.log', maxBytes=10240,
-                                           backupCount=10)
-        file_handler.setFormatter(logging.Formatter(
-            '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+        if not os.path.exists("logs"):
+            os.mkdir("logs")
+        file_handler = RotatingFileHandler(
+            "logs/digitaldash.log", maxBytes=10240, backupCount=10
+        )
+        file_handler.setFormatter(
+            logging.Formatter(
+                "%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]"
+            )
+        )
         file_handler.setLevel(logging.INFO)
         app.logger.addHandler(file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('Dash App Startup')
+        app.logger.info("Dash App Startup")
 
     # app will be used as the server for Dash
     return app
